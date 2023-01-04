@@ -14,10 +14,10 @@ prompt = "a photo of a cute dog"
 _ = pipe(prompt, num_inference_steps=1)
 
 # Results match those from the CPU device after the warmup pass.
-image = pipe(prompt).images[0]
+images = pipe(prompt).images
 
-image_name = str(uuid.uuid1()) + ".jpg"
-
-image.save(image_name)
+for image in images:
+    image_name = str(uuid.uuid1()) + ".jpg"
+    image.save(image_name)
 
 print("Done!")
