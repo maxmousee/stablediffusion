@@ -1,6 +1,10 @@
 # make sure you're logged in with `huggingface-cli login`
 import uuid
+import os
 from diffusers import StableDiffusionPipeline
+
+if not os.path.exists("gen"):
+    os.makedirs("gen")
 
 pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5")
 pipe = pipe.to("mps")
@@ -18,6 +22,6 @@ images = pipe(prompt).images
 
 for image in images:
     image_name = str(uuid.uuid1()) + ".jpg"
-    image.save(image_name)
+    image.save("gen/" + image_name)
 
 print("Done!")
