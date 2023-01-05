@@ -3,7 +3,7 @@ import uuid
 import os
 from diffusers import StableDiffusionPipeline
 
-OUTPUT_DIR = "gen_natan"
+OUTPUT_DIR = "gen"
 
 if not os.path.exists("%s" % OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
