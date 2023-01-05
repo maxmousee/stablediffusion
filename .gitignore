@@ -6,6 +6,8 @@
 .idea/inspectionProfiles/Project_Default.xml
 .idea/inspectionProfiles/profiles_settings.xml
 lib/*
+gen/*
+gen_natan/*
 bin/*
 .vscode/*
 .DS_Store
