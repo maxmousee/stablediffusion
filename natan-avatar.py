@@ -8,13 +8,13 @@ OUTPUT_DIR = "gen_natan"
 if not os.path.exists("%s" % OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
-pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5")
+pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", safety_checker=None)
 pipe = pipe.to("mps")
 
 # Recommended if your computer has < 64 GB of RAM
 pipe.enable_attention_slicing()
 
-prompt = "a sketch of a man drinking whisky in a bar, black and white, 4k, 8k"
+prompt = "a pencil sketch of a man drinking whisky in a bar, black and white, 4k, 8k, beautiful"
 
 # First-time "warmup" pass (see explanation above)
 _ = pipe(prompt, num_inference_steps=1)

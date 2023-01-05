@@ -8,7 +8,7 @@ OUTPUT_DIR = "gen_natan"
 if not os.path.exists("%s" % OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
-pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5")
+pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", safety_checker=None)
 pipe = pipe.to("mps")
 
 # Recommended if your computer has < 64 GB of RAM
