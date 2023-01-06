@@ -9,6 +9,9 @@ lib/*
 gen/*
 gen_natan/*
 bin/*
+models/*
+content/*
+share/*
 .vscode/*
 .DS_Store
 pyvenv.cfg

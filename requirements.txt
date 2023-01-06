@@ -3,3 +3,11 @@ transformers
 torch
 torchvision
 diffusers
+matplotlib
+IPython
+datasets
+# triton
+# ftfy
+# bitsandbytes
+natsort
+huggingface_hub
