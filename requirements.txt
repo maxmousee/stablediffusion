@@ -8,6 +8,6 @@ IPython
 datasets
 # triton
 # ftfy
-# bitsandbytes
+bitsandbytes
 natsort
 huggingface_hub
