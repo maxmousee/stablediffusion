@@ -6,8 +6,9 @@ diffusers
 matplotlib
 IPython
 datasets
-# triton
+triton
 # ftfy
+datasets
 bitsandbytes
 natsort
 huggingface_hub

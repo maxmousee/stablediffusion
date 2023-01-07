@@ -81,7 +81,7 @@ plt.savefig('grid.png', dpi=72)
 model_path = "stable_diffusion_weights/zwx/800"
 
 scheduler = DDIMScheduler(beta_start=0.00085, beta_end=0.012, beta_schedule="scaled_linear", clip_sample=False, set_alpha_to_one=False)
-pipe = StableDiffusionPipeline.from_pretrained(model_path, scheduler=scheduler, safety_checker=None, torch_dtype=torch.float16).to("mps")
+pipe = StableDiffusionPipeline.from_pretrained(model_path, scheduler=scheduler, safety_checker=None, torch_dtype=torch.float16).to("cuda")
 
 prompt = " Beautiful warmly lit close up studio portrait of natan person sweetly smiling cute, impasto oil painting heavy brushstrokes by Cy Twombly and Anselm Kiefer , trending on artstation dramatic lighting abstract Expressionism"
 negative_prompt = ""
@@ -91,7 +91,7 @@ num_inference_steps = 50
 height = 512
 width = 512
 
-with autocast("mps"), torch.inference_mode():
+with autocast("cuda"), torch.inference_mode():
     images = pipe(
         prompt,
         height=height,

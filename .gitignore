@@ -6,6 +6,7 @@
 .idea/inspectionProfiles/Project_Default.xml
 .idea/inspectionProfiles/profiles_settings.xml
 lib/*
+lib64/*
 gen/*
 gen_natan/*
 bin/*
